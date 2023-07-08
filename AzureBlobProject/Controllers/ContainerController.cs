@@ -33,6 +33,8 @@ public class ContainerController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Container container)
     {
+        // MUA : Creates container on Azure - Tested 05/July-2023
+
         await _containerService.CreateContainer(container.Name);
         return RedirectToAction(nameof(Index));
     }

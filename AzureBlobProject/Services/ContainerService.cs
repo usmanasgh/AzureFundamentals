@@ -53,7 +53,9 @@ public class ContainerService : IContainerService
             {
                 //get metadata
                 var blobClient = _blobContainer.GetBlobClient(blobItem.Name);
+
                 BlobProperties blobProperties = await blobClient.GetPropertiesAsync();
+                
                 string blobToAdd = blobItem.Name;
                 if (blobProperties.Metadata.ContainsKey("title"))
                 {

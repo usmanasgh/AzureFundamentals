@@ -10,9 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// MUA : Adding this service to access Blob Storage
 builder.Services.AddSingleton(u => new BlobServiceClient(
         builder.Configuration.GetValue<string>("BlobConnection")
     ));
+
+// MUA: Registering services
 builder.Services.AddSingleton<IContainerService, ContainerService>();
 builder.Services.AddSingleton<IBlobService, BlobService>();
 

@@ -73,6 +73,9 @@ public class BlobService : IBlobService
                 Uri = blobClient.Uri.AbsoluteUri + "?" + sasContainerSignature
             };
 
+            
+            // MUA: Below code can be used to access SAS (Shared access builder)
+
             //if (blobClient.CanGenerateSasUri)
             //{
             //    BlobSasBuilder sasBuilder = new()
