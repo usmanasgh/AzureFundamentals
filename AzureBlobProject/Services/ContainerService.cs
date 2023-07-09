@@ -44,11 +44,14 @@ public class ContainerService : IContainerService
         List<string> containerAndBlobNames = new();
         containerAndBlobNames.Add("Account Name : " + _blobClient.AccountName);
         containerAndBlobNames.Add("------------------------------------------------------------------------------------------------------------");
+        
         await foreach ( BlobContainerItem blobContainerItem in _blobClient.GetBlobContainersAsync())
         {
             containerAndBlobNames.Add("--" + blobContainerItem.Name);
+            
             BlobContainerClient _blobContainer =
                   _blobClient.GetBlobContainerClient(blobContainerItem.Name);
+
             await foreach(BlobItem blobItem in _blobContainer.GetBlobsAsync())
             {
                 //get metadata

@@ -20,7 +20,7 @@ namespace AzureTangyFunc
         }
 
         [FunctionName("UpdateStatusToCompletedAndSendEmail")]
-        public async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer,
+        public async Task Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer,
             [SendGrid(ApiKey = "CustomSendGridKeyAppSettingName")] IAsyncCollector<SendGridMessage> messageCollector, ILogger log)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
@@ -36,7 +36,7 @@ namespace AzureTangyFunc
             _db.SaveChanges();
 
             var message = new SendGridMessage();
-            message.AddTo("dotnetmastery@gmail.com");
+            message.AddTo("usmanasgh@gmail.com");
             message.AddContent("text/html", $"Processing completed for {salesRequestFromDb.Count()} records");
             message.SetFrom(new EmailAddress("hello@dotnetmastery.com"));
             message.SetSubject("Azure Tangy Processing Successful");

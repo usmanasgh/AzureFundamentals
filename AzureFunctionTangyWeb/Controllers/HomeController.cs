@@ -40,6 +40,8 @@ public class HomeController : Controller
         {
             //call our function and pass the content
 
+            // MUA :  http://localhost:7071/api/OnSalesUploadWriteToQueue
+
             HttpResponseMessage response = await client.PostAsync("http://localhost:7071/api/OnSalesUploadWriteToQueue", content);
             string returnValue = response.Content.ReadAsStringAsync().Result;
         }

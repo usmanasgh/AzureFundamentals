@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureLogicAppExample", "Azu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureRedisCache", "AzureRedisCache", "{B15F30FF-BF74-4091-ADD1-9B46BFD5D752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCache", "RedisCache\RedisCache.csproj", "{2F38FEA1-304E-4A36-8DDA-3F4DF3999089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisCache", "RedisCache\RedisCache.csproj", "{2F38FEA1-304E-4A36-8DDA-3F4DF3999089}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
